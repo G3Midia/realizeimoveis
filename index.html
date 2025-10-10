@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Realize Imóveis</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Ícones -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-...seu-hash-aqui..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="icon" type="image/png" href="img/site/favicon.png">
+
+  <!-- Splide.js CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+  />
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn etc.) -->
+<meta property="og:title" content="Realize Imóveis">
+<meta property="og:description" content="Os melhores imóveis de Porto Velho estão aqui!">
+<meta property="og:image" content="https://g3midia.github.io/realizeimoveis/img/site/meta.png">
+<meta property="og:url" content="https://g3midia.github.io/realizeimoveis/">
+<meta property="og:type" content="website">
+
+<!-- Meta Pixel Code - Página Principal -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)n._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '851786913671752'); // Substitua pelo ID do seu pixel
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" 
+  src="https://www.facebook.com/tr?id=851786913671752&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
+</head>
+<body>
+  <header class="header-simples">
+  <div class="header-container">
+    <img src="img/site/logohor.png" alt="Logo" class="logo-header">
+  </div>
+</header>
+
+
+  <main id="conteudo-imovel">
+    <!-- Conteúdo será injetado pelo script.js -->
+  </main>
+
+  <!-- Recomendados (opcional) -->
+  <section id="recomendados">
+    <div class="recomendados h2">
+    <h4>Você também pode gostar</h4>
+    </div>
+    <div id="recomendados-carousel" class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <!-- Slides injetados pelo script.js -->
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+  <div class="footer-container">
+    <div class="footer-text">
+      <p>© 2025 Site Desenvolvido por G3Mídia. Todos os direitos reservados.</p>
+    </div>
+    <div class="footer-logo">
+      <img src="img/site/logohor.png" alt="Logo da empresa">
+    </div>
+  </div>
+</footer>
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/22061060.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+<!-- Splide.js -->
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<!-- Script -->
+
+  <script src="script.js"></script>
+</body>
+</html>
