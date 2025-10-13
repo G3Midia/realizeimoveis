@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="title-block">
               <h1>${titulo}</h1>
               <h4>${subtitulo}</h4>
-              <button class="btn-dourado" onclick="location.href='#form-${idForm}'">QUERO CONHECER</button>
+              <button class="btn-dourado" onclick="location.href='#formulario'">QUERO CONHECER</button>
             </div>
 
             <!-- INFORMAÇÕES PRINCIPAIS -->
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <section class="bloco sobre">
               <h2>Sobre este imóvel</h2>
               ${sobreHTML}
-              <button class="btn-dourado" onclick="location.href='#form-${idForm}'">CADASTRE-SE AGORA MESMO</button>
+              <button class="btn-dourado" onclick="location.href='#formulario'">CADASTRE-SE AGORA MESMO</button>
             </section>
 
             <!-- CONDIÇÕES DE PAGAMENTO -->
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <h2>Condições de pagamento</h2>
               <p class="texto-grande">${condicoes}</p>
               <p class="texto-pequeno">${complementoCondicoes}</p>
-              <button class="btn-dourado" onclick="location.href='#form-${idForm}'">ENTRAR EM CONTATO</button>
+              <button class="btn-dourado" onclick="location.href='#formulario'">ENTRAR EM CONTATO</button>
             </section>
 
             <!-- FORMULÁRIO -->
@@ -167,3 +167,4 @@ document.addEventListener("DOMContentLoaded", () => {
         "<p>Erro ao carregar dados.</p>";
     });
 });
+
