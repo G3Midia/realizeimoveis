@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <!-- FORMULÁRIO -->
             <section class="formulario" id="formulario">
               <div class="bloco cadastro">
-                <h1>Preparamos um material completo sobre este imóvel:</h1>
+                <h1>Cadastre-se agora mesmo para receber todas as informações:</h1>
                 <form id="${idForm}" action="obrigado.html">
                   <label for="nome">Nome*</label>
                   <input type="text" id="nome" name="form_fields[name]" required placeholder="Digite seu nome">
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   <input type="email" id="email" name="form_fields[email]" required placeholder="Digite seu melhor e-mail">
 
                   <center>
-                    <button type="submit">RECEBER MATERIAL COMPLETO</button>
+                    <button type="submit">CADASTRAR</button>
                   </center>
                 </form>
               </div>
@@ -167,5 +167,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "<p>Erro ao carregar dados.</p>";
     });
 });
+
 
 
