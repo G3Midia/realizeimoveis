@@ -120,7 +120,7 @@ body {
   background-color: transparent;
   padding: 10px 20px 30px;
   border-radius: 0px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+ 
   margin: 30px 0px;
   color: #d3a304;
 }
@@ -200,7 +200,7 @@ body {
   padding: 20px;
   border-radius: 0px;
   margin-bottom: 50px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+ 
   width: 50%;
   color: #fff;
 
@@ -274,7 +274,7 @@ body {
   background: #fff;
   border-radius: 0px;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+ 
   margin: 5px;
 
   @media (max-width: 768px) {
@@ -435,4 +435,5 @@ body {
   }
 
 }
+
 
