@@ -58,13 +58,24 @@ document.addEventListener("DOMContentLoaded", () => {
             .map((u) => `<li class="splide__slide"><img src="${u}" alt="${titulo}"></li>`)
             .join("");
 
-          const sobreHTML = `<p>${sobre}</p>`;
-
-          // Função pra criar item só se tiver conteúdo
+          // função pra criar item de info apenas se tiver conteúdo
           const infoItem = (label, value) => {
             if (!value || value.toLowerCase() === "none") return "";
             return `<div class="info-item"><strong>${label}</strong><br>${value}</div>`;
           };
+
+          // seção "Sobre este imóvel" — só aparece se tiver texto
+          const sobreSection = sobre && sobre.trim() !== ""
+            ? `
+              <section class="bloco sobre">
+                <h2>Sobre este imóvel</h2>
+                <p>${sobre}</p>
+                <button class="btn-dourado" onclick="location.href='#formulario'">
+                  CADASTRE-SE AGORA MESMO
+                </button>
+              </section>
+            `
+            : "";
 
           detailHTML = `
             <!-- CARROSSEL DE IMAGENS PRINCIPAIS -->
@@ -94,12 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${infoItem("Diferenciais:", Diferenciais)}
             </section>
 
-            <!-- SOBRE O IMÓVEL -->
-            <section class="bloco sobre">
-              <h2>Sobre este imóvel</h2>
-              ${sobreHTML}
-              <button class="btn-dourado" onclick="location.href='#formulario'">CADASTRE-SE AGORA MESMO</button>
-            </section>
+            ${sobreSection}
 
             <!-- CONDIÇÕES DE PAGAMENTO -->
             <section class="bloco condicoes">
@@ -167,6 +173,3 @@ document.addEventListener("DOMContentLoaded", () => {
         "<p>Erro ao carregar dados.</p>";
     });
 });
-
-
-
