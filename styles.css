@@ -140,6 +140,17 @@ body {
 }
 }
 
+.btn-ler-mais {
+  background: none;
+  border: none;
+  color: var(--dourado, #c59b5f);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+
 /* =========================
    CONDIÇÕES
 ========================= */
