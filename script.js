@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ? `
               <section class="bloco sobre">
                 <h2>Sobre este imóvel</h2>
-                <p>${sobre}</p>
+                <p class="texto-sobre">${sobre}</p>
                 <button class="btn-dourado" onclick="location.href='#formulario'">
                   CADASTRE-SE AGORA MESMO
                 </button>
@@ -145,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       detailEl.innerHTML = detailHTML || "<p>Imóvel não encontrado.</p>";
 
+      // Inicializa os carrosséis
       if (detailHTML) {
         new Splide("#image-carousel", {
           type: "loop",
@@ -166,6 +167,37 @@ document.addEventListener("DOMContentLoaded", () => {
         pagination: false,
         breakpoints: { 768: { perPage: 1 } },
       }).mount();
+
+      // --- FUNÇÃO DE "LER MAIS" NO MOBILE ---
+      const sobreEl = document.querySelector(".bloco.sobre .texto-sobre");
+      if (sobreEl && window.innerWidth <= 768) {
+        const maxLines = 6; // número máximo de linhas visíveis
+        sobreEl.style.display = "-webkit-box";
+        sobreEl.style.webkitBoxOrient = "vertical";
+        sobreEl.style.overflow = "hidden";
+        sobreEl.style.webkitLineClamp = maxLines;
+        sobreEl.style.transition = "all 0.3s ease";
+
+        // Cria botão "Ler mais"
+        const btnLerMais = document.createElement("button");
+        btnLerMais.textContent = "Ler mais";
+        btnLerMais.className = "btn-ler-mais";
+
+        // Insere logo depois do texto
+        sobreEl.insertAdjacentElement("afterend", btnLerMais);
+
+        let expandido = false;
+        btnLerMais.addEventListener("click", () => {
+          expandido = !expandido;
+          if (expandido) {
+            sobreEl.style.webkitLineClamp = "unset";
+            btnLerMais.textContent = "Mostrar menos";
+          } else {
+            sobreEl.style.webkitLineClamp = maxLines;
+            btnLerMais.textContent = "Ler mais";
+          }
+        });
+      }
     })
     .catch((err) => {
       console.error(err);
