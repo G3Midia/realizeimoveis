@@ -355,6 +355,14 @@ body {
   background-color: #a78d3c;
 }
 
+.valor-principal {
+  font-weight: 700;
+  color: #1b5e20;
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+
 /* =========================
    AJUSTE DE ALTURA PADRÃO NOS RECOMENDADOS
 ========================= */
