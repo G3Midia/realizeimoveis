@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
         ] = row.c.map((cell) => cell?.v || "");
 
         const imgRec = imagens.split(",")[0].trim();
+        const valorPrincipal = condicoes || ""; // usa a coluna de condições como valor principal
+
+        // --- CARD DOS RECOMENDADOS ---
         recList.insertAdjacentHTML(
           "beforeend",
           `
@@ -45,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h2>${titulo}</h2>
                 <h4>${subtitulo}</h4>
                 <p class="cidade"><i class="fa-solid fa-map-marker-alt"></i>${endereco}</p>
+                ${valorPrincipal ? `<p class="valor-principal">${valorPrincipal}</p>` : ""}
                 <button onclick="location.href='index.html?id=${id}'">Ver Detalhes</button>
               </div>
             </div>
@@ -52,19 +56,18 @@ document.addEventListener("DOMContentLoaded", () => {
         `
         );
 
+        // --- CONTEÚDO DO IMÓVEL DETALHADO ---
         if (id === imovelId) {
           const imgsArr = imagens.split(",").map((u) => u.trim()).filter((u) => u);
           const slidesHTML = imgsArr
             .map((u) => `<li class="splide__slide"><img src="${u}" alt="${titulo}"></li>`)
             .join("");
 
-          // função pra criar item de info apenas se tiver conteúdo
           const infoItem = (label, value) => {
             if (!value || value.toLowerCase() === "none") return "";
             return `<div class="info-item"><strong>${label}</strong><br>${value}</div>`;
           };
 
-          // seção "Sobre este imóvel" — só aparece se tiver texto
           const sobreSection = sobre && sobre.trim() !== ""
             ? `
               <section class="bloco sobre">
@@ -145,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       detailEl.innerHTML = detailHTML || "<p>Imóvel não encontrado.</p>";
 
-      // Inicializa os carrosséis
       if (detailHTML) {
         new Splide("#image-carousel", {
           type: "loop",
@@ -168,22 +170,18 @@ document.addEventListener("DOMContentLoaded", () => {
         breakpoints: { 768: { perPage: 1 } },
       }).mount();
 
-      // --- FUNÇÃO DE "LER MAIS" NO MOBILE ---
       const sobreEl = document.querySelector(".bloco.sobre .texto-sobre");
       if (sobreEl && window.innerWidth <= 768) {
-        const maxLines = 6; // número máximo de linhas visíveis
+        const maxLines = 6;
         sobreEl.style.display = "-webkit-box";
         sobreEl.style.webkitBoxOrient = "vertical";
         sobreEl.style.overflow = "hidden";
         sobreEl.style.webkitLineClamp = maxLines;
         sobreEl.style.transition = "all 0.3s ease";
 
-        // Cria botão "Ler mais"
         const btnLerMais = document.createElement("button");
         btnLerMais.textContent = "Ler mais";
         btnLerMais.className = "btn-ler-mais";
-
-        // Insere logo depois do texto
         sobreEl.insertAdjacentElement("afterend", btnLerMais);
 
         let expandido = false;
