@@ -9,7 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((res) => res.text())
     .then((text) => {
       const data = JSON.parse(text.substring(47).slice(0, -2));
-      const rows = data.table.rows.slice(1);
+      let rows = data.table.rows.slice(1);
+
+      // --- EMBARALHA A ORDEM DOS CARDS RECOMENDADOS ---
+      rows = rows.sort(() => Math.random() - 0.5);
 
       const detailEl = document.getElementById("conteudo-imovel");
       const recList = document.querySelector("#recomendados-carousel .splide__list");
